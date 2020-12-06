@@ -1,0 +1,7 @@
+{
+  "pension": 0.08,
+  "medical": 0.02,
+  "unemployment": 0.002,
+  "injury": 0.004,
+  "maternity": 0.008
+}

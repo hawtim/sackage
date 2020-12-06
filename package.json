@@ -1,0 +1,43 @@
+{
+  "name": "sackage",
+  "version": "0.1.5",
+  "description": "A salary package calculator for evaluating jobs in China",
+  "main": "dist/index",
+  "types": "types/index.d.ts",
+  "keywords": [
+    "salary",
+    "package",
+    "typescript",
+    "work",
+    "job",
+    "calculator"
+  ],
+  "scripts": {
+    "prebuild": "del-cli dist",
+    "esm": "tsc --module esnext &&  cpy dist/index.js dist --rename index.esm.js",
+    "cjs": "tsc --module commonjs",
+    "build": "npm run esm && npm run cjs && npm run move",
+    "dev": "npm run build --watch",
+    "move": "cpy src/*.json dist"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hawtim/sackage.git"
+  },
+  "author": "hawtim<hawtimzhang@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hawtim/sackage/issues"
+  },
+  "engines": {
+    "node": ">=10.16.0"
+  },
+  "homepage": "https://github.com/hawtim/sackage#readme",
+  "dependencies": {
+    "cpy-cli": "^3.1.1",
+    "del-cli": "^3.0.1"
+  }
+}
